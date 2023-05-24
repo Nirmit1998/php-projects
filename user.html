@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login user page</title>
+	<link rel="stylesheet" href="user.css">
+</head>
+<body>
+	<div class="form">
+		<form action="admin_create_db.php" onsubmit="return validate()" method="POST">
+			<h2>User login</h2>
+			<label>Enter first name</label><br>
+			<input type="text" id="fname" name="fname"><br><br>
+
+			<label>Enter lastname</label><br>
+			<input type="text" id="lname" name="lname"><br><br>
+
+			<label>Enter contact no</label><br>
+			<input type="text" id="cno" name="cno"><br><br>
+
+			<label>Enter Mail Id</label><br>
+			<input type="email" id="email" name="email"><br><br>
+
+			<div class="buttons">
+				<button type="submit" id="btn1">Submit</button>
+				<button type="reset" id="btn2">Reset</button>
+			</div>
+		</form>
+	</div>
+	<script>
+		function validate()
+		{
+			let fname=document.getElementById('fname');
+			let lname=document.getElementById('lname');
+			let cno=document.getElementById('cno');
+			let email=document.getElementById('email');
+
+			if(fname.value.trim()==""){
+				alert("Please check first name");
+				return false;
+			}
+
+			if(lname.value.trim()==""){
+				alert("Please enter lastname");
+				return false;
+			}
+
+			if(cno.value.trim()==""){
+				alert("Please fill contact no");
+				return false;
+			}
+
+			if(email.value.trim()==""){
+				alert("Please enter email ID:");
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>
